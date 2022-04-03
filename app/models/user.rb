@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable
 
   has_one :user_profile
+  has_one :match
 
   after_create :create_profile
 
