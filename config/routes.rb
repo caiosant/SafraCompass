@@ -12,7 +12,8 @@ Rails.application.routes.draw do
       sessions: :user_sessions
     }
 
-  resources :user_profiles, only: [:show, :edit, :update]
+  resources :user_profiles, only: [:show, :update]
+  resources :advisor_profiles, only: [:show, :update]
   resources :matches, only: [:index, :show, :create, :update]
   resources :advisor_feedbacks, only: [:index, :create, :show]
 end

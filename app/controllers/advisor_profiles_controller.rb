@@ -1,5 +1,6 @@
 class AdvisorProfilesController < ApplicationController
     def show
+        binding.break
         profile = AdvisorProfile.find(params[:id])
 
         if current_advisor == profile.advisor

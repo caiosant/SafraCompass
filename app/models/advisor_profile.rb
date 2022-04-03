@@ -7,5 +7,5 @@ class AdvisorProfile < ApplicationRecord
   enum marital_status: { single: 0, married: 1, divorced: 2,
                          widower: 3, separate: 4, stable_union: 5}
 
-  validates :ancord_code, presence: true
+  validates :ancord_code, presence: true, on: :update
 end
