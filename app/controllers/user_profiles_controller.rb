@@ -2,7 +2,6 @@ class UserProfilesController < ApplicationController
     before_action :authenticate_user!
 
     def show
-
         profile = UserProfile.find(params[:id])
 
         if current_user == profile.user
