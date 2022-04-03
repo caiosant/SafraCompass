@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_174158) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_190258) do
   create_table "advisor_feedbacks", force: :cascade do |t|
     t.integer "grade"
     t.text "comment"
@@ -41,6 +41,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_174158) do
     t.integer "advisor_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cpf"
+    t.string "social_name"
+    t.string "state"
     t.index ["advisor_id"], name: "index_advisor_profiles_on_advisor_id"
   end
 
