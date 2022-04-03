@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     }
 
   resources :user_profiles, only: [:show, :edit, :update]
-  resources :matches
+  resources :matches, only: [:index, :show, :create, :update]
+  resources :advisor_feedbacks, only: [:index, :create, :show]
 end

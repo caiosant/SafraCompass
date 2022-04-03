@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_052913) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_145904) do
+  create_table "advisor_feedbacks", force: :cascade do |t|
+    t.integer "grade"
+    t.text "comment"
+    t.integer "match_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_advisor_feedbacks_on_match_id"
+  end
+
   create_table "advisors", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -73,6 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_052913) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "advisor_feedbacks", "matches"
   add_foreign_key "matches", "advisors"
   add_foreign_key "matches", "users"
   add_foreign_key "user_profiles", "users"

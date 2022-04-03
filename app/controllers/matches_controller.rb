@@ -38,10 +38,10 @@ class MatchesController < ApplicationController
         match.started_at = DateTime.now
         match.active = true
 
-        if match.save && current_user.id == match.user.id
+        if current_user.id == match.user.id && match.save
             render status: :created, json: match.as_json
         elsif current_user.id != match.user.id
-            head :unauthorized
+            render status: :unauthorized, json: { message: 'Há algo errado com sua autenticação.' }
         else
             render status: :bad_request
         end
