@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_03_042044) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_03_052913) do
   create_table "advisors", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -21,6 +21,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_042044) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_advisors_on_email", unique: true
     t.index ["reset_password_token"], name: "index_advisors_on_reset_password_token", unique: true
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "advisor_id", null: false
+    t.integer "user_id", null: false
+    t.boolean "active", default: true, null: false
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["advisor_id"], name: "index_matches_on_advisor_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
   create_table "user_profiles", force: :cascade do |t|
@@ -61,5 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_042044) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "matches", "advisors"
+  add_foreign_key "matches", "users"
   add_foreign_key "user_profiles", "users"
 end
