@@ -6,5 +6,5 @@ Rails.application.routes.draw do
       sessions: :sessions
     }
 
-  resources :testes, only: [:index]
+  resources :user_profiles, only: [:show, :edit, :update]
 end
