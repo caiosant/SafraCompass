@@ -1,5 +1,4 @@
 class MatchesController < ApplicationController
-
     def index
         
         if current_advisor.present?

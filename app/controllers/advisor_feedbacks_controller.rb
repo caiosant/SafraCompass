@@ -1,5 +1,4 @@
 class AdvisorFeedbacksController < ApplicationController
-
     def index
         if current_advisor.present?
             feedbacks = AdvisorFeedback.all.includes(:match).where(matches: {advisor_id: current_advisor.id})
