@@ -4,7 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable
 
   has_one :user_profile
-  has_one :match
+  has_many :matches
+  has_many :advisor_feedbacks, through: :matches
 
   after_create :create_profile
 
