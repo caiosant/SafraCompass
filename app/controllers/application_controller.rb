@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+    ActiveRecord::Base.include_root_in_json = true
     respond_to :json
     before_action :process_token
 
