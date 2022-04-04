@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -14,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def generate_jwt
-    JWT.encode({id: id, exp: 10.minutes.from_now.to_i}, Rails.application.secrets.secret_key_base)
+    JWT.encode({ id:, exp: 10.minutes.from_now.to_i }, Rails.application.secrets.secret_key_base)
   end
 end

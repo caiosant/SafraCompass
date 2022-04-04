@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddInfosToAdvisorProfile < ActiveRecord::Migration[7.0]
   def change
     add_column :advisor_profiles, :cpf, :string
