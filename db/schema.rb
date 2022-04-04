@@ -22,31 +22,31 @@ ActiveRecord::Schema[7.0].define(version: 20_220_403_190_258) do
     t.index ['match_id'], name: 'index_advisor_feedbacks_on_match_id'
   end
 
-  create_table 'advisor_profiles', force: :cascade do |t|
-    t.string 'name'
-    t.string 'last_name'
-    t.date 'birthday'
-    t.integer 'gender'
-    t.string 'adress'
-    t.string 'adress_number'
-    t.string 'adress_complement'
-    t.string 'county'
-    t.string 'city'
-    t.string 'born_in'
-    t.string 'ancord_code'
-    t.string 'rg'
-    t.string 'rg_issuer'
-    t.boolean 'deficient'
-    t.integer 'deficient_description'
-    t.string 'mom_name'
-    t.integer 'marital_status'
-    t.integer 'advisor_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'cpf'
-    t.string 'social_name'
-    t.string 'state'
-    t.index ['advisor_id'], name: 'index_advisor_profiles_on_advisor_id'
+  create_table "advisor_profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "last_name"
+    t.date "birthday"
+    t.integer "gender"
+    t.string "adress"
+    t.string "adress_number"
+    t.string "adress_complement"
+    t.string "country"
+    t.string "city"
+    t.string "born_in"
+    t.string "ancord_code"
+    t.string "rg"
+    t.string "rg_issuer"
+    t.boolean "deficient"
+    t.integer "deficient_description"
+    t.string "mom_name"
+    t.integer "marital_status"
+    t.integer "advisor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "cpf"
+    t.string "social_name"
+    t.string "state"
+    t.index ["advisor_id"], name: "index_advisor_profiles_on_advisor_id"
   end
 
   create_table 'advisors', force: :cascade do |t|

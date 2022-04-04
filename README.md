@@ -35,6 +35,7 @@ cd SafraCompass
 - Executar:
 ```
 bin/setup
+rails db:seeds
 rails server
 ```
 Acesse a aplicação pelo navegador: digitando http://localhost:3000/ na barra de endereço.

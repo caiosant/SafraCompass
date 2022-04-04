@@ -10,7 +10,7 @@ class CreateAdvisorProfiles < ActiveRecord::Migration[7.0]
       t.string :adress
       t.string :adress_number
       t.string :adress_complement
-      t.string :county
+      t.string :country
       t.string :city
       t.string :born_in
       t.string :ancord_code
