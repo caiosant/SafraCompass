@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_03_190258) do
     t.string "adress"
     t.string "adress_number"
     t.string "adress_complement"
-    t.string "county"
+    t.string "country"
     t.string "city"
     t.string "born_in"
     t.string "ancord_code"
